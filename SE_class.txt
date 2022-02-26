@@ -1,0 +1,31 @@
+Person
+	string	name
+	int	age
+	string	gender
+
+Administrator extend Person
+	ArrayList<person>	stuff
+
+Staff extend Person
+	Administrator 	administrator
+	string		major（等于classname）
+	Boolean		training
+
+LOS
+	ArrayList<Staff>	los
+
+================================================
+CourseDate
+	int day
+	int month
+	int year
+	
+TeachingRequire
+	string		className
+	CourseDate	startDate
+	CourseDate 	endDate
+	int 		capacity
+	Person		staff
+
+LOR
+	ArrayList<TeachingRequire> lor  
