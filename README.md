@@ -1,4 +1,9 @@
-# SEassessment2
+d# SEassessment2
+
+# Requirement
+（Q&A）
+1. after program the file will update the statement
+2. we shhould choose teachers base on course requirements , not class name
 
 # UML
 after clone this project
