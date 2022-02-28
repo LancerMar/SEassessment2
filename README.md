@@ -4,6 +4,7 @@ d# SEassessment2
 （Q&A）
 1. after program the file will update the statement
 2. we shhould choose teachers base on course requirements , not class name
+3. we can use multiple files to store our data
 
 # UML
 after clone this project
