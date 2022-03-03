@@ -17,9 +17,11 @@ public class FileIOImpl implements FileIO{
 
     @Override
     public void save(LoR loR, LoS loS) {
-        String jsonStrR = JSON.toJSONString(loR);
-        String jsonStrS = JSON.toJSONString(loS);
+        String jsonStrR = JSON.toJSONString(loR.getLoR());
+        String jsonStrS = JSON.toJSONString(loS.getLoS());
         System.out.println(jsonStrR);
         System.out.println(jsonStrS);
+        List<TeachingRequire> teachingRequires = JSONArray.parseArray(jsonStrR,TeachingRequire.class);
+        List<Staff> staffs = JSONArray.parseArray(jsonStrS, Staff.class);
     }
 }
