@@ -2,7 +2,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LoR {
+public class LoR implements ListOfData{
 
     private List<TeachingRequire> loR = new ArrayList<>();
 
@@ -22,6 +22,7 @@ public class LoR {
         }
     }
 
+    @Override
     public void print(PrintStream ps){
         for(TeachingRequire teachingRequire:loR){
             teachingRequire.print(ps);

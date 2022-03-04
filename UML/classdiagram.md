@@ -19,8 +19,8 @@ class Administrator {
 
 class Staff {
     - Administrator administrator
-    - string major
-    - Boolean training
+    - string majord
+    - Boolean 
     + void set_administrator()
     + void set_major()
     + string get_major()

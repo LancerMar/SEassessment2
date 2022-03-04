@@ -5,6 +5,12 @@ import java.util.List;
 
 public class FileIOImpl implements FileIO{
 
+    private String loc_filePath;
+
+    public FileIOImpl(String filePath){
+        loc_filePath=filePath;
+    }
+
     @Override
     public LoR loadR() {
         return null;
@@ -23,5 +29,13 @@ public class FileIOImpl implements FileIO{
         System.out.println(jsonStrS);
         List<TeachingRequire> teachingRequires = JSONArray.parseArray(jsonStrR,TeachingRequire.class);
         List<Staff> staffs = JSONArray.parseArray(jsonStrS, Staff.class);
+    }
+
+    public void writefile(String Jstring){
+        
+    }
+
+    public static void main(String[] args){
+        System.out.println("test");
     }
 }

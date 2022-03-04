@@ -2,7 +2,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LoS {
+public class LoS implements ListOfData{
 
     private List<Staff> loS = new ArrayList<>();
 
@@ -23,6 +23,7 @@ public class LoS {
         return null;
     }
 
+    @Override
     public void print(PrintStream ps){
         for (Staff staff:loS){
             staff.print(ps);
