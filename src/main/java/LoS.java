@@ -1,3 +1,6 @@
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,4 +34,13 @@ public class LoS implements ListOfData{
         }
     }
 
+    @Override
+    public String get_json_str(){
+        return JSON.toJSONString(loS);
+    }
+
+    @Override
+    public void parse_json_str(String str_json){
+        loS=JSONArray.parseArray(str_json,Staff.class);
+    }
 }

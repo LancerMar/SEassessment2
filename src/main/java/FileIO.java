@@ -1,8 +1,8 @@
 
 public interface FileIO {
 
-    public ListOfData load();
+    public ListOfData load() throws Exception;
     
-    public void save(ListOfData lod);
+    public void save(ListOfData lod) throws Exception;
 
 }

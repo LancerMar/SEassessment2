@@ -4,6 +4,12 @@ public class Main {
 
     public static void main(String[] args) {
 
+        String file_patch_LoR = "list_of_teaching_requirements.txt";
+        FileIO_LoD file_LoR = new FileIO_LoD(file_patch_LoR);
+
+        String file_patch_LoS = "list_of_staffs.txt";
+        FileIO_LoD file_LoS = new FileIO_LoD(file_patch_LoS);
+
         TeachingRequire course1 = new TeachingRequire("aaa","math",50,new CourseDate(25,12,2021),new CourseDate(3,12,2022));
         TeachingRequire course2 = new TeachingRequire("bbb","french",50,new CourseDate(25,12,2021),new CourseDate(3,12,2022));
         TeachingRequire course3 = new TeachingRequire("ccc","computer",50,new CourseDate(25,12,2021),new CourseDate(3,12,2022));
@@ -12,6 +18,12 @@ public class Main {
         loR.add_teachingRequire(course1);
         loR.add_teachingRequire(course2);
         loR.add_teachingRequire(course3);
+
+        // try {
+        //     file_LoR.save(loR);
+        // } catch (Exception e1) {
+        //     e1.printStackTrace();
+        // }
 
         Staff staff1 = new Staff("zzz",40,"male","math");
         Staff staff2 = new Staff("yyy",40,"female","computer");
@@ -23,6 +35,12 @@ public class Main {
         loS.add_staff(staff2);
         loS.add_staff(staff3);
         loS.add_staff(staff4);
+
+        // try {
+        //     file_LoS.save(loS);
+        // } catch (Exception e) {
+        //     e.printStackTrace();
+        // }
 
         Administrator administrator1 = new Administrator("ad1", 30, "male");
         administrator1.add_staff(staff1);
@@ -53,8 +71,8 @@ public class Main {
         System.err.println();
         System.err.println("------------------------------------");
 
-        FileIO fileIO = new FileIOImpl();
-        fileIO.save(loR, loS);
+        // FileIO fileIO = new FileIOImpl();
+        // fileIO.save(loR, loS);
 
     }
 

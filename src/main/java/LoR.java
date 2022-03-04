@@ -1,3 +1,6 @@
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +31,16 @@ public class LoR implements ListOfData{
             teachingRequire.print(ps);
             ps.println();
         }
+    }
+
+    @Override
+    public String get_json_str(){
+        return JSON.toJSONString(loR);
+    }
+
+    @Override
+    public void parse_json_str(String str_json){
+        loR=JSONArray.parseArray(str_json,TeachingRequire.class);
     }
 
 }
