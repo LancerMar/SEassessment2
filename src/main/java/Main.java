@@ -5,10 +5,10 @@ public class Main {
     public static void main(String[] args) {
 
         String file_patch_LoR = "list_of_teaching_requirements.txt";
-        FileIO_LoD file_LoR = new FileIO_LoD(file_patch_LoR);
+        FileIO file_LoR = new FileIO_LoD(file_patch_LoR);
 
         String file_patch_LoS = "list_of_staffs.txt";
-        FileIO_LoD file_LoS = new FileIO_LoD(file_patch_LoS);
+        FileIO file_LoS = new FileIO_LoD(file_patch_LoS);
 
         TeachingRequire course1 = new TeachingRequire("aaa","math",50,new CourseDate(25,12,2021),new CourseDate(3,12,2022));
         TeachingRequire course2 = new TeachingRequire("bbb","french",50,new CourseDate(25,12,2021),new CourseDate(3,12,2022));
