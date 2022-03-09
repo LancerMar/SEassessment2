@@ -46,15 +46,4 @@ public class LoS implements ListOfData{
     public void parse_json_str(String str_json){
         loS=JSONArray.parseArray(str_json,Staff.class);
     }
-
-//    @Override
-//    public String get_json_str(){
-//        return gson.toJson(loS);
-//    }
-//
-//    @Override
-//    public void parse_json_str(String str_json){
-//        Type type = new TypeToken<List<Staff>>() {}.getType();
-//        loS=gson.fromJson(str_json,type);
-//    }
 }
