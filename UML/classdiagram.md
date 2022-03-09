@@ -14,6 +14,7 @@ class Person {
 class Administrator {
     - ArrayList<Person> staffs
     + void add_staff()
+    + void search_staff()
     + void print() 
 }
 
