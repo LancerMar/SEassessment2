@@ -113,4 +113,8 @@ interface ListOfData {
 ListOfData <|-- LoR
 ListOfData <|-- LoS
 FileIO_LoD *-- ListOfData
+
+class main{
+    + static void main(String[] args)
+}
 @enduml
