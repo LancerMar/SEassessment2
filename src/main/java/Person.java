@@ -37,6 +37,6 @@ public class Person {
     }
 
     public void print(PrintStream ps){
-        ps.print(name+":");
+        ps.print(name + ": age is " + age);
     }
 }

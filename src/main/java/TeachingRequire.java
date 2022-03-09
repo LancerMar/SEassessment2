@@ -1,3 +1,5 @@
+import com.alibaba.fastjson.annotation.JSONField;
+
 import java.io.PrintStream;
 
 public class TeachingRequire {
@@ -5,6 +7,7 @@ public class TeachingRequire {
     private String className;
     private String requirement;
     private int capacity;
+    @JSONField(serialize = false)
     private Staff staff;
     private CourseDate startDate;
     private CourseDate endDate;
@@ -66,7 +69,11 @@ public class TeachingRequire {
     }
 
     public void print(PrintStream ps){
-        ps.print(className + " : requirement is " + requirement);
+        ps.print("Class ");
+        ps.print(className + ": requirement is " + requirement + "; start date is ");
+        startDate.print_date(ps);
+        ps.print("; end date is ");
+        endDate.print_date(ps);
         if (staff!=null){
             ps.print("; staff is " + staff.getName());
         }

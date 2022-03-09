@@ -1,7 +1,10 @@
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.PrintStream;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +22,7 @@ public class LoS implements ListOfData{
 
     public Staff find_staff_by_major(String major){
         for(Staff staff:loS){
-            if(staff.getMajor().equals(major)){
+            if(staff.getMajor().equals(major) && !staff.getTraining().equals("is training")){
                 return staff;
             }
         }
