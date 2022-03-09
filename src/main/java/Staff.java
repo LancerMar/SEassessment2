@@ -1,15 +1,20 @@
+import com.alibaba.fastjson.annotation.JSONField;
+
 import java.io.PrintStream;
 
 public class Staff extends Person{
 
+    @JSONField(serialize = false)
     private Administrator administrator;
-    private String major;
-    private boolean training;
 
-    public Staff(String name, int age, String gender, String major) {
+    private String major;
+
+    private String training;
+
+    public Staff(String name, int age, String gender, String major, String training) {
         super(name, age, gender);
         this.major = major;
-        this.training=false;
+        this.training = training;
     }
 
     public Administrator getAdministrator() {
@@ -28,17 +33,18 @@ public class Staff extends Person{
         this.major = major;
     }
 
-    public boolean getTraining() {
+    public String getTraining() {
         return training;
     }
 
-    public void setTraining(boolean training) {
+    public void setTraining(String training) {
         this.training = training;
     }
 
     public void print(PrintStream ps) {
+        ps.print("Staff ");
         super.print(ps);
-        ps.print(" major is " + major + "; training is " + training);
+        ps.print("; major is " + major + "; " + training);
         if (administrator!=null){
             ps.print("; admin is " + administrator.getName());
         }

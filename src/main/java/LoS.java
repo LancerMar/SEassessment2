@@ -1,8 +1,14 @@
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.io.PrintStream;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LoS {
+public class LoS implements ListOfData{
 
     private List<Staff> loS = new ArrayList<>();
 
@@ -16,13 +22,14 @@ public class LoS {
 
     public Staff find_staff_by_major(String major){
         for(Staff staff:loS){
-            if(staff.getMajor().equals(major)){
+            if(staff.getMajor().equals(major) && !staff.getTraining().equals("is training")){
                 return staff;
             }
         }
         return null;
     }
 
+    @Override
     public void print(PrintStream ps){
         for (Staff staff:loS){
             staff.print(ps);
@@ -30,4 +37,24 @@ public class LoS {
         }
     }
 
+    @Override
+    public String get_json_str(){
+        return JSON.toJSONString(loS);
+    }
+
+    @Override
+    public void parse_json_str(String str_json){
+        loS=JSONArray.parseArray(str_json,Staff.class);
+    }
+
+//    @Override
+//    public String get_json_str(){
+//        return gson.toJson(loS);
+//    }
+//
+//    @Override
+//    public void parse_json_str(String str_json){
+//        Type type = new TypeToken<List<Staff>>() {}.getType();
+//        loS=gson.fromJson(str_json,type);
+//    }
 }

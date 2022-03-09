@@ -1,0 +1,1 @@
+[{"age":25,"gender":"male","major":"math","name":"Tom","training":"not trained"},{"age":34,"gender":"female","major":"computer","name":"Maria","training":"not trained"},{"age":33,"gender":"female","major":"math","name":"Aliy","training":"already trained"},{"age":40,"gender":"male","major":"french","name":"Zeka","training":"not trained"}]

@@ -1,8 +1,14 @@
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.io.PrintStream;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LoR {
+public class LoR implements ListOfData{
 
     private List<TeachingRequire> loR = new ArrayList<>();
 
@@ -22,11 +28,33 @@ public class LoR {
         }
     }
 
+    @Override
     public void print(PrintStream ps){
         for(TeachingRequire teachingRequire:loR){
             teachingRequire.print(ps);
             ps.println();
         }
     }
+
+    @Override
+    public String get_json_str(){
+        return JSON.toJSONString(loR);
+    }
+
+    @Override
+    public void parse_json_str(String str_json){
+        loR=JSONArray.parseArray(str_json,TeachingRequire.class);
+    }
+
+//    @Override
+//    public String get_json_str(){
+//        return gson.toJson(loR);
+//    }
+//
+//    @Override
+//    public void parse_json_str(String str_json){
+//        Type type = new TypeToken<List<TeachingRequire>>() {}.getType();
+//        loR=gson.fromJson(str_json,type);
+//    }
 
 }
